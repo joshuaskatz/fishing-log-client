@@ -1,0 +1,22 @@
+//Theme colors
+$theme-colors: (
+	"dark-blue": (#31708e),
+	"blue": (#5085a5),
+	"light-blue": (#8fc1e3),
+	"grey": (#777),
+	"light-grey": (#bcb9c9),
+	"white": (#f7f9fb)
+);
+
+//Colors
+$green: lighten(#687864, 5%);
+$dark-blue: #31708e;
+$blue: #5085a5;
+$light-blue: #8fc1e3;
+$grey: #777;
+$light-grey: #bcb9c9;
+$input-grey: #cccccc;
+$white: #f7f9fb;
+
+//Font sizing
+$default-font-size: 1.6rem;

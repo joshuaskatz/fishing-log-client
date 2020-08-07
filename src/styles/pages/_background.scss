@@ -1,0 +1,13 @@
+body {
+	background-image: linear-gradient(
+			to bottom right,
+			rgba($dark-blue, .78),
+			rgba($blue, .78)
+		),
+		url('../../images/fish-background-3.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	height: 100vh;
+}

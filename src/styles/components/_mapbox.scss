@@ -1,0 +1,122 @@
+#map {
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 90vh;
+	border-radius: 3px;
+}
+
+#mapForm {
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 67vh;
+	border-radius: 3px;
+}
+
+.marker {
+	background-image: url('../../images/mapbox-icon.png');
+	background-size: cover;
+	width: 5rem;
+	height: 5rem;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.mapboxgl-popup {
+	max-width: 20rem;
+	color: $dark-blue;
+	font-family: "Lato", sans-serif;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+	border-top-color: rgba($white, .95);
+}
+
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+	border-left-color: rgba($white, .95);
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+	border-bottom-color: rgba($white, .95);
+}
+
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+	border-right-color: rgba($white, .95);
+}
+
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip {
+	border-bottom-color: rgba($white, .95);
+}
+
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip {
+	border-top-color: rgba($white, .95);
+}
+
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+	border-bottom-color: rgba($white, .95);
+}
+
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+	border-top-color: rgba($white, .95);
+}
+
+.mapboxgl-popup-content {
+	text-align: center;
+	padding-top: 1.5rem;
+	background: rgba($white, .95);
+
+	.mapboxgl-popup-close-button {
+		width: 1.5rem;
+		height: 2rem;
+		border-radius: 3px;
+		color: $light-grey;
+	}
+
+	.mapboxgl-popup-close-button:hover {
+		color: #de350b;
+		background-color: #ffbdad;
+	}
+
+	.popup-body-paragraph {
+		margin-bottom: 1px;
+		font-size: 1.2rem;
+	}
+
+	.popup-body-paragraph-span {
+		font-weight: 700;
+	}
+}
+
+@media (min-width: 576px) {
+	#map {
+		height: 80vh;
+	}
+}
+
+@media (max-width: 575px) {
+	#map {
+		height: 100vh;
+	}
+}
+
+@media (max-width: 575px) {
+	#mapForm {
+		height: 40vh;
+	}
+}
+
+@media (min-width: 992px) {
+	#mapForm {
+		height: 81vh;
+	}
+}
+@media (min-width: 1200px) {
+	#mapForm {
+		height: 67vh;
+	}
+}

@@ -1,17 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloClient } from 'apollo-client';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+import './styles/main.scss';
+
+import AppRouter from './router/AppRouter';
+import { createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+const httpLink = createHttpLink({
+	uri: process.env.REACT_APP_URI
+});
+
+const authLink = setContext((_, { headers }) => {
+	const token = localStorage.getItem('token');
+	return {
+		headers: {
+			...headers,
+			authorization: token ? `Bearer ${token}` : ''
+		}
+	};
+});
+
+const cache = new InMemoryCache();
+
+const client = new ApolloClient({
+	cache,
+	link: authLink.concat(httpLink)
+});
+
+cache.writeData({
+	data: {
+		isLoggedIn: !!localStorage.getItem('token')
+	}
+});
+
+const jsx = (
+	<ApolloProvider client={client}>
+		<AppRouter />
+	</ApolloProvider>
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(jsx, document.getElementById('root'));

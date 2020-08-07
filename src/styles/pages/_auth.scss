@@ -1,0 +1,15 @@
+.auth-link {
+	color: $white;
+}
+
+.auth-link:hover {
+	color: $white;
+}
+
+.auth-position {
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	/* bring your own prefixes */
+	transform: translate(-50%, -50%);
+}

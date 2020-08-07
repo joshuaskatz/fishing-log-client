@@ -1,0 +1,171 @@
+.main-navbar {
+	background: rgba($dark-blue, .7);
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+
+	button {
+		color: $white !important;
+		font-size: 2rem;
+	}
+}
+
+#navbar-text {
+	font-size: 1.2rem;
+	color: $white !important;
+}
+
+#navbar-text-link {
+	text-decoration: none;
+	color: $white !important;
+}
+
+#navbar-text-link:hover {
+	color: $light-blue !important;
+	text-decoration: none;
+}
+
+#navbar-brand {
+	color: $white !important;
+	font-size: 3rem;
+}
+
+.navbar-link {
+	color: $white !important;
+	font-size: 1.2rem;
+	transition: transform .2s ease-in-out;
+}
+
+.navbar-link:hover {
+	transform: translateX(2rem);
+}
+
+#add-database-dropdown {
+	font-size: 1.2rem;
+	color: $white !important;
+	transition: transform .2s ease-in-out;
+}
+
+#add-database-dropdown:hover {
+	transform: translateX(2rem);
+}
+
+div.dropdown-menu {
+	font-size: 1.2rem;
+	background-color: transparent;
+	border: 0px;
+	a {
+		color: $white;
+		width: 75vw;
+		transition: transform .2s ease-in-out;
+	}
+
+	a:hover {
+		color: $white;
+		background-color: transparent;
+		transform: translateX(2rem);
+	}
+
+	a:active {
+		background-color: transparent;
+	}
+}
+
+@media (max-width: 767px) {
+	.navbar-link {
+		width: 75vw;
+	}
+
+	#add-database-dropdown {
+		width: 75vw;
+	}
+}
+
+@media (min-width: 768px) {
+	.main-navbar {
+		background: transparent;
+	}
+
+	#navbar-brand {
+		font-size: 2rem;
+		margin: 0 2rem 0 0;
+	}
+
+	#navbar-text {
+		font-size: 1.2rem;
+		color: $light-blue !important;
+	}
+
+	#navbar-text-link {
+		font-size: 1.2rem;
+		display: inline-block;
+		text-decoration: none;
+		padding-bottom: 5px;
+	}
+
+	#navbar-text-link:hover {
+		text-decoration: none;
+		color: $white !important;
+	}
+
+	.navbar-link {
+		position: relative;
+		color: $white !important;
+		font-size: 1.2rem;
+	}
+
+	.navbar-link:hover {
+		transform: none;
+	}
+
+	.navbar-link:after {
+		background: none repeat scroll 0 0 transparent;
+		bottom: 0;
+		content: "";
+		display: block;
+		height: 1px;
+		left: 50%;
+		position: absolute;
+		background: $white;
+		transition: width 0.3s ease 0s, left 0.3s ease 0s;
+		width: 0;
+	}
+
+	.navbar-link:hover:not(.active):after {
+		width: 100%;
+		left: 0;
+	}
+
+	.active {
+		border-bottom: 1px solid $white !important;
+	}
+
+	#add-database-dropdown {
+		font-size: 1.2rem;
+		transition: none;
+	}
+
+	#add-database-dropdown:hover {
+		transform: none;
+	}
+
+	div.dropdown-menu {
+		font-size: 1.2rem;
+		background-color: $white;
+		a {
+			color: $blue;
+			width: 15vw;
+			transition: transform .2s ease-in-out;
+		}
+
+		a:hover {
+			background-color: $white;
+			color: $dark-blue;
+			width: 5vw;
+			transform: translateX(1rem);
+		}
+
+		a:active {
+			background-color: $white;
+		}
+	}
+}

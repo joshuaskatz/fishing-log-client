@@ -1,0 +1,23 @@
+//Third-party component css files
+@import '~react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+@import '~bootstrap/scss/bootstrap';
+@import '~react-datepicker/dist/react-datepicker.css';
+@import '~@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;500;700&display=swap');
+
+@import 'abstract/variables';
+
+@import 'base/base';
+@import 'base/typography';
+
+@import 'components/datepicker-overrides';
+@import 'components/main-navbar';
+@import 'components/react-bootstrap-table';
+@import 'components/mapbox';
+@import 'components/forms';
+@import 'components/tables';
+
+@import 'pages/auth';
+@import 'pages/create-rivers';
+@import 'pages/background';
+@import 'pages/home-page';
