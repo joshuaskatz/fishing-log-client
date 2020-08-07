@@ -350,7 +350,7 @@ const AddRiverForm = (props) => {
 												ref={register({
 													required: 'Required Field',
 													pattern: {
-														value: /^[+]?\d*\.?\d*$/,
+														value: /^[-+]?\d*\.?\d*$/,
 														message:
 															'Must enter valid latitude value.'
 													}
