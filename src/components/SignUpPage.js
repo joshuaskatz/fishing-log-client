@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, Button, Container, Col, Alert } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
@@ -16,6 +16,24 @@ const SignUpPage = (props) => {
 
 	if (isAuth(client)) return <Redirect to="/home" />;
 
+	useEffect(
+		() => {
+			window.addEventListener('unhandledrejection', (e) => {
+				e.preventDefault();
+
+				if (error) {
+					console.log(error);
+				}
+			});
+			return () =>
+				window.removeEventListener(
+					'unhandledrejection',
+					(e) => e.preventDefault
+				);
+		},
+		[ error ]
+	);
+
 	const onSubmit = (values) => {
 		createUser({
 			variables: {
@@ -27,13 +45,6 @@ const SignUpPage = (props) => {
 			props.history.push('/home');
 		});
 	};
-
-	if (error)
-		return (
-			<p className="d-flex justify-content-center align-items-center">
-				An error occured
-			</p>
-		);
 
 	return (
 		<div>
@@ -73,6 +84,11 @@ const SignUpPage = (props) => {
 							{errors.email && (
 								<Alert variant="danger">
 									Valid email is required
+								</Alert>
+							)}
+							{error && (
+								<Alert variant="danger">
+									Email is already in use
 								</Alert>
 							)}
 						</Form.Group>
