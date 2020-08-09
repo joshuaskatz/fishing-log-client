@@ -14,8 +14,6 @@ const SignUpPage = (props) => {
 
 	const client = useApolloClient();
 
-	if (isAuth(client)) return <Redirect to="/home" />;
-
 	useEffect(
 		() => {
 			window.addEventListener('unhandledrejection', (e) => {
@@ -45,6 +43,8 @@ const SignUpPage = (props) => {
 			props.history.push('/home');
 		});
 	};
+
+	if (isAuth(client)) return <Redirect to="/home" />;
 
 	return (
 		<div>
