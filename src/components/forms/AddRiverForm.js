@@ -14,6 +14,7 @@ import { withRouter } from 'react-router-dom';
 import Select from 'react-select';
 import { toTitleCase } from '../../utils/toTitleCase';
 import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 import { CREATE_RIVER } from '../../graphql-gql/mutation';
 
@@ -82,6 +83,13 @@ const AddRiverForm = (props) => {
 				center: [ -98.5795, 39.8283 ],
 				zoom: 2
 			});
+
+			map.addControl(
+				new MapboxGeocoder({
+					accessToken: mapboxgl.accessToken,
+					mapboxgl: mapboxgl
+				})
+			);
 
 			map.addControl(
 				new mapboxgl.GeolocateControl({
