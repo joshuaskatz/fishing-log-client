@@ -22,7 +22,7 @@ const MainNavbar = () => {
 					id="navbar-brand"
 					to="/home"
 				>
-					Fishing Log
+					Share Our Waters
 				</Navbar.Brand>
 
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />

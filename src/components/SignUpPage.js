@@ -39,7 +39,7 @@ const SignUpPage = (props) => {
 		<div>
 			<Container className="auth-position">
 				<h2 className="text-center auth-page-header mb-5">
-					Fishing Log
+					Share Our Waters
 				</h2>
 				<Col
 					xs={{ span: 10, offset: 1 }}
